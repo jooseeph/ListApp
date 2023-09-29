@@ -1,5 +1,5 @@
 function UserTable() {
-  return <div>index</div>;
+  return <div>UserTable </div>;
 }
 
 export default UserTable;
