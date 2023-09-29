@@ -29,6 +29,18 @@
       "id": 6,
       "name": "Tural Abdullayev",
       "email": "tur.al@example.com"
+    },
+    {
+      "name": "salam",
+      "email": "salamsa@.sdss",
+      "phone": "232",
+      "id": 7
+    },
+    {
+      "name": "salam2",
+      "email": "salasmas@sasa.",
+      "phone": "ssaas",
+      "id": 8
     }
   ],
   "posts": [

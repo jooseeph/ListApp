@@ -8,43 +8,38 @@ const UserForm = () => {
     const[name,namechange]=useState("");
     const[email,emailchange]=useState("");
     const[phone,phonechange]=useState("");
-    const[active,activechange]=useState(true);
     const[validation,valchange]=useState(false);
 
 
-    // const navigate=useNavigate();
+    const navigate=useNavigate();
 
     const handlesubmit=(e)=>{
       e.preventDefault();
-      const empdata={name,email,phone,active};
-      console.log
+      const empdata={name,email,phone};
       
 
-      fetch("http://localhost:8000/employee",{
+      fetch("http://localhost:3000/users",{
         method:"POST",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(empdata)
       }).then((res)=>{
-        // alert('Saved successfully.')
-        // navigate('/');
+        alert('Saved successfully.')
+        navigate('/');
       }).catch((err)=>{
         console.log(err.message)
       })
-
-      
 
     }
 
     return (
         <div>
-
             <div className="row">
                 <div className="offset-lg-3 col-lg-6">
                     <form className="container" onSubmit={handlesubmit}>
 
                         <div className="card" style={{"textAlign":"left"}}>
                             <div className="card-title">
-                                <h2>Employee Create</h2>
+                                <h2>User Create</h2>
                             </div>
                             <div className="card-body">
 
@@ -79,17 +74,11 @@ const UserForm = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-12">
-                                        <div className="form-check">
-                                        <input checked={active} onChange={e=>activechange(e.target.checked)} type="checkbox" className="form-check-input"></input>
-                                            <label  className="form-check-label">Is Active</label>
-                                            
-                                        </div>
-                                    </div>
+                                    
                                     <div className="col-lg-12">
                                         <div className="form-group">
                                            <button className="btn btn-success" type="submit">Save</button>
-                                           {/* <Link to="/" className="btn btn-danger">Back</Link> */}
+                                           <Link to="/" className="btn btn-danger">Back</Link>
                                         </div>
                                     </div>
 
