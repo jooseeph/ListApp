@@ -8,17 +8,16 @@ import ProductTable from "./components/Pages/ProductTable";
 import UserTable from "./components/Pages/UserTable";
 
 function App() {
-
   return (
     <BrowserRouter>
-      <Sidebar/>
-      <Header/>
-        <Routes>
-          <Route path="/" element={<UserForm/>}/>
-          <Route path="/usertable" element={<UserTable/>}/>
-          <Route path="/productform" element={<ProductForm/>}/>
-          <Route path="/producttable" element={<ProductTable/>}/>
-        </Routes>
+      <Sidebar />
+      <Header />
+      <Routes>
+        <Route path="/" element={<UserForm />} />
+        <Route path="/usertable" element={<UserTable />} />
+        <Route path="/productform" element={<ProductForm />} />
+        <Route path="/producttable" element={<ProductTable />} />
+      </Routes>
     </BrowserRouter>
   );
 }

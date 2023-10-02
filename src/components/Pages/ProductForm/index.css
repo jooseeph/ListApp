@@ -1,0 +1,18 @@
+.container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+        }
+.inputField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.errorText {
+    color: red;
+    font-size: 14px;
+}
