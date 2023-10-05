@@ -9,7 +9,7 @@ function UserTable() {
   useEffect(() => {
     const fetchDbJson = async () => {
       try {
-        const response = await fetch('http://localhost:8080/users');
+        const response = await fetch('http://localhost:3000/users');
         if (!response.ok) {
           throw new Error('Yuklenmedi');
         }

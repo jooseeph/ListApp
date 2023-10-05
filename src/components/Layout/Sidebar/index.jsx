@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import {
   BsCart3,
   BsGrid1X2Fill,
