@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .container-table {
+    max-width: 768px;
+    width: 100%;
+    margin: auto;
+    padding: 100px 0;
+  
+    .search {
+      width: 100%;
+      padding: 20px;
+      margin: 20px 0;
+    }
+  
+    table {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-collapse: collapse;
+      border: 0.5px solid black;
+  
+      th,
+      td {
+        border: 0.5px solid black;
+        padding: 8px;
+      }
+  
+      th {
+        width: 200px;
+      }
+    }
+  
+    button {
+      border-radius: 20px;
+      border: 0;
+      padding: 10px;
+      cursor: pointer;
+  
+      &:nth-child(1) {
+        &:hover {
+          transform: scale(1.05);
+          background-color: red;
+        }
+      }
+  
+      &:nth-child(2) {
+        &:hover {
+          transform: scale(1.05);
+          background-color: green;
+          color: white;
+        }
+      }
+    }
+  
+    div {
+      text-align: center;
+      margin-top: 20px;
+  
+      h2 {
+        font-size: 20px;
+      }
+  
+      form {
+        label {
+          display: block;
+          margin-bottom: 10px;
+  
+          input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+          }
+        }
+  
+        button[type="submit"] {
+          border: 0;
+          cursor: pointer;
+          padding: 5px 15px;
+          background-color: red;
+          color: white;
+          font-size: 16px;
+  
+          &:hover {
+            background-color: darkred;
+          }
+        }
+      }
+    }
+    .flex-between-p {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 30px;
+    }
+  
+  }
+  
