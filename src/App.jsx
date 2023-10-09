@@ -7,12 +7,9 @@ import Header from "./components/Layout/Header";
 import ProductForm from "./components/Pages/ProductForm";
 import ProductTable from "./components/Pages/ProductTable";
 import UserTable from "./components/Pages/UserTable";
-<<<<<<< HEAD
-import { Provider } from "react-redux";
-import { store } from "./redux";
-=======
 import "./components/style.css";
->>>>>>> main
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -21,11 +18,13 @@ function App() {
     setOpenSidebarToggle(!openSidebarToggle);
   };
   return (
-<<<<<<< HEAD
     <Provider store={store}>
       <BrowserRouter>
-        <Sidebar />
-        <Header />
+        <Header OpenSidebar={OpenSidebar} />
+        <Sidebar
+          openSidebarToggle={openSidebarToggle}
+          OpenSidebar={OpenSidebar}
+        />
         <Routes>
           <Route path="/" element={<UserForm />} />
           <Route path="/usertable" element={<UserTable />} />
@@ -34,21 +33,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </Provider>
-=======
-    <BrowserRouter>
-      <Header OpenSidebar={OpenSidebar} />
-      <Sidebar
-        openSidebarToggle={openSidebarToggle}
-        OpenSidebar={OpenSidebar}
-      />
-      <Routes>
-        <Route path="/" element={<UserForm />} />
-        <Route path="/usertable" element={<UserTable />} />
-        <Route path="/productform" element={<ProductForm />} />
-        <Route path="/producttable" element={<ProductTable />} />
-      </Routes>
-    </BrowserRouter>
->>>>>>> main
   );
 }
 

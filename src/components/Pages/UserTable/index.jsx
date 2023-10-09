@@ -1,29 +1,39 @@
 import { useState, useEffect } from "react";
 import "../UserTable/_usertable.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { userSlice } from "../../../redux/userSlice";
-
-const { getUsers } = userSlice.actions;
+import { fetchUsers } from "../../../redux/userSlice";
 
 function UserTable() {
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user.users);
+
   const [data, setData] = useState([]);
   const [editingIndex, setEditingIndex] = useState(-1);
   const [newEntry, setNewEntry] = useState({ name: "", email: "" });
   const [searchTerm, setSearchTerm] = useState("");
 
-  const dispatch = useDispatch();
-
   useEffect(() => {
-    const fetchDbJson = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/users');
-        if (!response.ok) {
-          throw new Error('Yuklenmedi');
-        }
+    // const fetchDbJson = async () => {
+    //   try {
+    //     const response = await fetch("http://localhost:3000/users");
+    //     if (!response.ok) {
+    //       throw new Error("Yuklenmedi");
+    //     }
+
+    //     const data = await response.json();
+    //     setData(data);
+    //   } catch (error) {
+    //     console.error("fetch olmadi:", error);
+    //   }
+    // };
 
     // fetchDbJson();
-    dispatch(getUsers());
+
+    dispatch(fetchUsers());
   }, []);
+
+  console.log(user);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -79,7 +89,7 @@ function UserTable() {
             </tr>
           </thead>
           <tbody>
-            {filteredData.map((item, index) => (
+            {user.map((item, index) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
                 {["name", "email", "phone"].map((field) => (
