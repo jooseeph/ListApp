@@ -14,9 +14,12 @@ function UserTable() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // const fetchDbJson = async () => {
-    //
-    // };
+    const fetchDbJson = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/users');
+        if (!response.ok) {
+          throw new Error('Yuklenmedi');
+        }
 
     // fetchDbJson();
     dispatch(getUsers());
